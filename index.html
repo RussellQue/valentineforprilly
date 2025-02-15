@@ -154,37 +154,29 @@
 
     <div class="hearts"></div>
 
-    <audio id="bg-music" loop>
-        <source src="bersamamu.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bg-music" loop autoplay>
+    <source src="bersamamu.mp3" type="audio/mpeg">
+</audio>
 
-    <script>
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "💖";
-            document.querySelector(".hearts").appendChild(heart);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const music = document.getElementById("bg-music");
 
-            const size = Math.random() * 40 + 10;
-            heart.style.fontSize = size + "px";
-
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.top = Math.random() * 100 + "vh";
-
-            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-            heart.style.opacity = Math.random() * 0.5 + 0.5;
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        setInterval(createHeart, 200);
-
+        // Mencoba autoplay setelah interaksi pengguna
         function playMusic() {
-            const music = document.getElementById("bg-music");
-            music.play();
+            music.play().catch(error => {
+                console.log("Autoplay dicegah, menunggu interaksi pengguna.");
+            });
         }
-    </script>
+
+        // Jika autoplay gagal, coba putar saat interaksi pertama pengguna
+        document.body.addEventListener("click", playMusic, { once: true });
+        document.body.addEventListener("scroll", playMusic, { once: true });
+
+        // Coba autoplay saat halaman selesai dimuat
+        playMusic();
+    });
+</script>
+
 </body>
 </html>

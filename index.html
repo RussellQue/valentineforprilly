@@ -3,176 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine Prilly Novelita</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Happy Valentine Prilly💖</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
         body {
             margin: 0;
-            overflow: hidden;
-            background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+            padding: 0;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            text-align: center;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            padding: 20px;
-            box-sizing: border-box;
+            background-color: #ff99cc;
+            overflow: hidden;
+            font-family: 'Pacifico', cursive;
         }
 
         .container {
             position: relative;
             z-index: 2;
-            max-width: 90%;
+        }
+
+        .valentine-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .photo {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            animation: fadeIn 2s ease-in-out;
-            color: #fff;
+            color: #ff3366;
+            margin-top: 10px;
         }
 
         p {
-            font-size: 1.1em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            animation: fadeIn 2s ease-in-out;
-            opacity: 0;
-            animation-fill-mode: forwards;
+            font-size: 18px;
+            color: #444;
         }
 
-        .photo-frame {
-            width: 80%;
-            max-width: 250px;
-            height: auto;
-            border: 8px solid white;
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 20px auto;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .photo-frame img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .button {
-            background: white;
-            color: #ff758c;
-            padding: 12px 20px;
-            font-size: 1em;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-            font-weight: bold;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .button:hover {
-            background: #ff4f7b;
+        button {
+            background-color: #ff3366;
             color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .hearts {
-            position: fixed;
-            width: 100%;
-            height: 100%;
+        button:hover {
+            background-color: #cc0055;
+        }
+
+        canvas {
+            position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
             pointer-events: none;
-        }
-
-        .heart {
-            position: absolute;
-            color: red;
-            font-size: 20px;
-            animation: floatUp 5s infinite ease-in-out;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100vh) scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Valentine Sayangkuu ❤️</h1>
-        <p>bersama Prilly sprti lagu ini, sa slalu sayang dan cinta ke prilly dan smoga Prilly juga merasakan apa yang sa rasakan</p>
-        <p>maaf Prilly kalo selama ini sa msh bnyk salah ke Prilly</p>
-        <p>sa slalu berusaha untuk bisa slalu kasih yg terbaik buat Prilly💖</p>
-        <p>skali lagi, happy valentine sayangkuu 💖</p>
 
-        <div class="photo-frame">
-            <img src="ft4.jpeg" alt="Foto Pasangan">
-        </div>
-
-        <button class="button" onclick="playMusic()">Putar Musik</button>
-    </div>
-
-    <div class="hearts"></div>
-
-    <audio id="bg-music" loop autoplay>
+    <audio id="bg-music" loop>
         <source src="bersamamu.mp3" type="audio/mpeg">
     </audio>
 
+    <div class="container">
+        <div class="valentine-card">
+            <img src="ft4.jpeg" alt="Foto Kita" class="photo">
+            <h1>Happy Valentine, Syg💖</h1>
+            <p>Hai Prilly💖</p>
+            <p>semoga Prilly tetap jadi Prilly yang sa kenal</p>
+            <p>dan sa juga slalu sayang ke Prilly setiap waktu, bukan hanya di hari valentine sja</p>
+            <p>hari kasih sayang, hari penuh coklat</p>
+            <p>semua love language, gue babatttttt</p>
+            <p>lavvyuuuu sygkuu cintakuuu cantikkuuuuuu😚</p>
+            <button onclick="playMusic()">Putar Musik 🎵</button>
+        </div>
+    </div>
+
+    <canvas id="heartsCanvas"></canvas>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const music = document.getElementById("bg-music");
-            function playMusic() {
-                music.play().catch(error => {
-                    console.log("Autoplay dicegah, menunggu interaksi pengguna.");
-                });
+        const canvas = document.getElementById("heartsCanvas");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const hearts = [];
+
+        class Heart {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 8 + 2;
+                this.speedY = Math.random() * 1 + 0.5;
             }
-            document.body.addEventListener("click", playMusic, { once: true });
-            document.body.addEventListener("scroll", playMusic, { once: true });
-            playMusic();
-        });
 
-        function createHeart() {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerHTML = "💖";
-            document.querySelector(".hearts").appendChild(heart);
+            draw() {
+                ctx.fillStyle = "rgba(255, 50, 100, 0.8)";
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
 
-            let size = Math.random() * 25 + 15;
-            heart.style.fontSize = `${size}px`;
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 1.5 + "s";
-
-            setTimeout(() => {
-                heart.remove();
-            }, 4000);
+            update() {
+                this.y -= this.speedY;
+                if (this.y < 0) {
+                    this.y = canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
         }
 
-        setInterval(createHeart, 100);
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                hearts.push(new Heart());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hearts.forEach(heart => {
+                heart.update();
+                heart.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener("resize", function () {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        function playMusic() {
+            document.getElementById("bg-music").play();
+        }
     </script>
+
 </body>
 </html>

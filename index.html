@@ -102,7 +102,6 @@
                 opacity: 1;
             }
             50% {
-                transform: translateY(-50vh) scale(1.2);
                 opacity: 0.8;
             }
             100% {
@@ -119,20 +118,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* Responsiveness */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            p {
-                font-size: 1em;
-            }
-            .button {
-                font-size: 0.9em;
-                padding: 10px 15px;
             }
         }
     </style>
@@ -155,28 +140,39 @@
     <div class="hearts"></div>
 
     <audio id="bg-music" loop autoplay>
-    <source src="bersamamu.mp3" type="audio/mpeg">
-</audio>
+        <source src="bersamamu.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const music = document.getElementById("bg-music");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const music = document.getElementById("bg-music");
+            function playMusic() {
+                music.play().catch(error => {
+                    console.log("Autoplay dicegah, menunggu interaksi pengguna.");
+                });
+            }
+            document.body.addEventListener("click", playMusic, { once: true });
+            document.body.addEventListener("scroll", playMusic, { once: true });
+            playMusic();
+        });
 
-        // Mencoba autoplay setelah interaksi pengguna
-        function playMusic() {
-            music.play().catch(error => {
-                console.log("Autoplay dicegah, menunggu interaksi pengguna.");
-            });
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+            document.querySelector(".hearts").appendChild(heart);
+
+            let size = Math.random() * 25 + 15;
+            heart.style.fontSize = `${size}px`;
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 1.5 + "s";
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
         }
 
-        // Jika autoplay gagal, coba putar saat interaksi pertama pengguna
-        document.body.addEventListener("click", playMusic, { once: true });
-        document.body.addEventListener("scroll", playMusic, { once: true });
-
-        // Coba autoplay saat halaman selesai dimuat
-        playMusic();
-    });
-</script>
-
+        setInterval(createHeart, 100);
+    </script>
 </body>
 </html>
